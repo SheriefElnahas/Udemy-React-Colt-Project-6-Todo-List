@@ -1,0 +1,13 @@
+.Header {
+    padding:2rem 3rem;
+}
+
+.Header h1 {
+    margin-bottom:0;
+}
+
+.Header p {
+    margin-top:10px;
+    font-weight: bold;
+    font-size:13px;
+}
