@@ -14,10 +14,13 @@ class App extends React.Component {
       {
         id: uuidv4(),
         todoTitle: 'Item 1',
+        editing: false,
       },
       {
         id: uuidv4(),
-        todoTitle: 'Item 2',
+        todoTitle: 'Item 5',
+        editing: false,
+
       },
     ]}
     this.addTodo = this.addTodo.bind(this);
@@ -25,7 +28,7 @@ class App extends React.Component {
   }
 
   addTodo(todo) {
-    const newTodo = {...todo, id: uuidv4()};
+    const newTodo = {...todo, id: uuidv4(), editing: false};
     this.setState(oldState => ({
       todos: [...oldState.todos, newTodo]
     }))
@@ -37,9 +40,11 @@ class App extends React.Component {
     }))
   }
 
+
+
   render() {
     const todosElement = this.state.todos.map((todo) => {
-      return <Todo todoTitle={todo.todoTitle} key={todo.id} id={todo.id} removeTodo={this.removeTodo} />
+      return <Todo todoTitle={todo.todoTitle} key={todo.id} id={todo.id} removeTodo={this.removeTodo} editing={todo.editing}/>
     })
     return (
       <div className="App">

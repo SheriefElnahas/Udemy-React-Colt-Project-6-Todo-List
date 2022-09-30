@@ -23,3 +23,7 @@
     border:3px solid #1a6767;
     margin-left:5px;
 }
+
+.NewTodoForm-btn:hover {
+    background:#095f5f;
+}

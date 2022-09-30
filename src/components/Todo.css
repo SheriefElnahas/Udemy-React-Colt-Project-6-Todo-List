@@ -11,3 +11,29 @@
     margin-right:1rem;
     cursor: pointer;
 }
+
+.edit input {
+    padding:0.5rem 1rem;
+    width:70%;
+    font-weight: bold;
+    
+}
+
+
+.edit button {
+    padding:0.5rem 0.8rem;
+    background:#0f8989;
+    border:none;
+    color:#fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding:0.6rem 1rem;
+    cursor: pointer;
+    font-size:12px;
+    border:3px solid #1a6767;
+    margin-left:5px;
+}
+
+.edit button:hover {
+    background:#269393;
+}
