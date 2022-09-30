@@ -21,6 +21,7 @@ class App extends React.Component {
       },
     ]}
     this.addTodo = this.addTodo.bind(this);
+    this.removeTodo = this.removeTodo.bind(this);
   }
 
   addTodo(todo) {
@@ -30,11 +31,15 @@ class App extends React.Component {
     }))
   }
 
-  
+  removeTodo(todoId) {
+    this.setState(oldState => ({
+       todos : oldState.todos.filter(todo => todo.id !== todoId)
+    }))
+  }
 
   render() {
     const todosElement = this.state.todos.map((todo) => {
-      return <Todo todoTitle={todo.todoTitle} key={todo.id} id={todo.id} />
+      return <Todo todoTitle={todo.todoTitle} key={todo.id} id={todo.id} removeTodo={this.removeTodo} />
     })
     return (
       <div className="App">
