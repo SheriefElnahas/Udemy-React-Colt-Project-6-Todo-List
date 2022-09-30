@@ -1,13 +1,14 @@
 .Header {
+    margin-bottom:1rem;
     padding:2rem 3rem;
 }
-
 .Header h1 {
     margin-bottom:0;
+    letter-spacing: 2px;
 }
 
 .Header p {
     margin-top:10px;
     font-weight: bold;
-    font-size:13px;
+    font-size:12px;
 }

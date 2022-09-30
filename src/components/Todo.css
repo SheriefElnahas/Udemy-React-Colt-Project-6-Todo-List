@@ -1,0 +1,13 @@
+.Todo {
+    display: flex;
+    justify-content: space-between;
+    background:#156060;
+    padding:1.5rem 1rem 1.5rem 3rem;
+    font-weight: bold;
+    margin-top:5px;
+}
+
+.Todo .fa-solid {
+    margin-right:1rem;
+    cursor: pointer;
+}
