@@ -1,6 +1,7 @@
 import './App.css';
 
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import Header from "./components/Header";
 import Todo from './components/Todo';
@@ -11,18 +12,35 @@ class App extends React.Component {
     super(props);
     this.state = {todos: [
       {
+        id: uuidv4(),
         todoTitle: 'Item 1',
-        todoId : 0
-      }
+      },
+      {
+        id: uuidv4(),
+        todoTitle: 'Item 2',
+      },
     ]}
+    this.addTodo = this.addTodo.bind(this);
   }
+
+  addTodo(todo) {
+    const newTodo = {...todo, id: uuidv4()};
+    this.setState(oldState => ({
+      todos: [...oldState.todos, newTodo]
+    }))
+  }
+
+  
+
   render() {
+    const todosElement = this.state.todos.map((todo) => {
+      return <Todo todoTitle={todo.todoTitle} key={todo.id} id={todo.id} />
+    })
     return (
       <div className="App">
         <Header />
-        < Todo />
-        < Todo />
-        <NewTodoForm />
+          {todosElement}
+        <NewTodoForm addTodo={this.addTodo}/>
       </div>
     )
   }

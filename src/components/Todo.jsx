@@ -1,9 +1,9 @@
 import './Todo.css';
 
-function Todo() {
+function Todo(props) {
     return (
         <div className="Todo">
-            <p>Item 1</p>
+            <p>{props.todoTitle}</p>
             <div className="Todo-icons">
                 <span><i className="fa-solid fa-pen"></i></span>
                 <span><i className="fa-solid fa-trash"></i></span>
